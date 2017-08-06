@@ -3,3 +3,4 @@ node_modules/**
 build/**
 tools/**
 src/libs/core/**
+gulpfile.js

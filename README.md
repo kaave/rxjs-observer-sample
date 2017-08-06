@@ -23,6 +23,8 @@ yarn build
 yarn typecheck
 # check codes quality
 yarn lint
+# check build files
+yarn build:check
 ```
 
 ## Important Technology
@@ -100,7 +102,6 @@ yarn lint
 |    |- /gulp/              # gulpタスクを記述したjs。タスクごとに1ファイルとする
 |    |- /webpack/           # webpackビルド設定
 |    |- /config.js          # ビルド関係設定ファイル
-|- .babelrc                 # babel設定ファイル(gulp, webpackの設定ファイル用)
 |- .eslintignore            # eslintから除外するファイル
 |- .eslintrc                # eslint設定ファイル
 |- .flowconfig              # flowtype設定ファイル
@@ -108,7 +109,7 @@ yarn lint
 |- .gitignore               # git管理対象外を記述
 |- .node-version            # ndenv用のバージョン指定
 |- .stylelintrc             # stylelint設定ファイル
-|- gulpfile.babel.js        # gulp実行ファイル
+|- gulpfile.js              # gulp実行ファイル
 |- package.json             # The list of 3rd party libraries for nodeJs
 |- README.md                # README
 |- site-config.json         # EJSビルド時に渡されるオプション値 metaタグなどに使うこと想定

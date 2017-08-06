@@ -1,8 +1,9 @@
-import gulp from 'gulp';
-import rev from 'gulp-rev';
-import revReplace from 'gulp-rev-replace';
+const gulp = require('gulp');
+const rev = require('gulp-rev');
+const revReplace = require('gulp-rev-replace');
+const wait = require('gulp-wait');
 
-import conf from '../config';
+const conf = require('../config');
 
 const manifest = gulp.src(`${conf.rev.dest}/${conf.rev.manifestFileName}`);
 
@@ -11,6 +12,7 @@ gulp.task('rev', () => gulp.src(conf.rev.src)
   .pipe(gulp.dest(conf.rev.dest))
   .pipe(rev.manifest(conf.rev.manifestFileName))
   .pipe(gulp.dest(conf.rev.dest))
+  .pipe(wait(1000))   // FIXME: ファイル書き出しより先にタスクが終了してしまうことがあるので、適当にsleep処理を仕込む
 );
 
 gulp.task('rev.replace', () => gulp.src(conf.revReplace.src)

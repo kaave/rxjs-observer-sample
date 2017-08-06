@@ -1,6 +1,6 @@
-@import "../../node_modules/libraries-frontend-framelunch/source/css/_variables.css";
-@import "../../node_modules/libraries-frontend-framelunch/source/css/_keyframes.css";
-@import "../../node_modules/libraries-frontend-framelunch/source/css/_reset.css";
+@import "../../node_modules/libraries-frontend-framelunch/css/_variables.css";
+@import "../../node_modules/libraries-frontend-framelunch/css/_keyframes.css";
+@import "../../node_modules/libraries-frontend-framelunch/css/_reset.css";
 
 body {
     font-family: var(--fontFamily-base);

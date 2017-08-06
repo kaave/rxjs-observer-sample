@@ -1,7 +1,7 @@
-import webpack from 'webpack';
-import base from './base';
+const webpack = require('webpack');
+const base = require('./base');
 
-export default Object.assign({}, base, {
+module.exports = Object.assign({}, base, {
   cache: true,
   devtool: 'inline-source-map',
   plugins: [

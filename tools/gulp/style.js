@@ -1,18 +1,18 @@
-import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import sourcemaps from 'gulp-sourcemaps';
-import postcss from 'gulp-postcss';
-import customProperties from 'postcss-custom-properties';
-import nested from 'postcss-nested';
-import importCss from 'postcss-import';
-import customMedia from 'postcss-custom-media';
-import cssFixes from 'postcss-fixes';
-import url from 'postcss-url';
-import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
-import browser from 'browser-sync';
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const sourcemaps = require('gulp-sourcemaps');
+const postcss = require('gulp-postcss');
+const customProperties = require('postcss-custom-properties');
+const nested = require('postcss-nested');
+const importCss = require('postcss-import');
+const customMedia = require('postcss-custom-media');
+const cssFixes = require('postcss-fixes');
+const url = require('postcss-url');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const browser = require('browser-sync');
 
-import conf from '../config';
+const conf = require('../config');
 
 gulp.task('style', () => (
   gulp.src(conf.style.src)

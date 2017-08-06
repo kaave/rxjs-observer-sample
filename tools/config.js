@@ -1,11 +1,11 @@
-export default {
+module.exports = {
   dest: {
     dev: '.tmp',
     build: 'build',
   },
 
   copy: {
-    static: ['src/*.*'],
+    roots: ['src/*.*'],
     assets: ['src/assets/**/*'],
   },
 

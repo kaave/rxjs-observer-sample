@@ -1,14 +1,14 @@
-import gulp from 'gulp';
-import gulpif from 'gulp-if';
-import runSequence from 'run-sequence';
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const runSequence = require('run-sequence');
 
-import conf from '../config';
+const conf = require('../config');
 
 gulp.task('dev', cb => runSequence(
   'clean',
   ['view', 'style', 'script'],
   'server',
-  cb,
+  cb
 ));
 
 gulp.task('default', ['dev'], () => {
@@ -21,7 +21,7 @@ gulp.task('build', cb => conf.rev.isEnable ?
   runSequence(
     'b.clean',
     ['b.view', 'b.style', 'b.script'],
-    ['copy.static', 'copy.assets'],
+    ['copy.roots', 'copy.assets'],
     'rev',
     'rev.replace',
     cb
@@ -29,7 +29,7 @@ gulp.task('build', cb => conf.rev.isEnable ?
   runSequence(
     'b.clean',
     ['b.view', 'b.style', 'b.script'],
-    ['copy.static', 'copy.assets'],
+    ['copy.roots', 'copy.assets'],
     cb
   )
 );

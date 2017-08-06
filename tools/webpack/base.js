@@ -1,12 +1,12 @@
-import globby from 'globby';
-import path from 'path';
-import customProperties from 'postcss-custom-properties';
-import nested from 'postcss-nested';
-import importCss from 'postcss-import';
-import autoprefixer from 'autoprefixer';
+const globby = require('globby');
+const path = require('path');
+const customProperties = require('postcss-custom-properties');
+const nested = require('postcss-nested');
+const importCss = require('postcss-import');
+const autoprefixer = require('autoprefixer');
 
-import conf from '../config';
-import { browserslist } from '../../package.json';
+const conf = require('../config');
+const { browserslist } = require('../../package.json');
 
 const babelOptions = {
   presets: [
@@ -44,7 +44,7 @@ globby.sync(conf.script.src)
     entry[basename] = `./${filename}`;
   });
 
-export default {
+module.exports = {
   entry,
   output: {
     filename: '[name].js',

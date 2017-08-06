@@ -1,12 +1,12 @@
-import gulp from 'gulp';
-import plumber from 'gulp-plumber';
-import ejs from 'gulp-ejs';
-import rename from 'gulp-rename';
-import htmlmin from 'gulp-htmlmin';
-import browser from 'browser-sync';
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const ejs = require('gulp-ejs');
+const rename = require('gulp-rename');
+const htmlmin = require('gulp-htmlmin');
+const browser = require('browser-sync');
 
-import conf from '../config';
-import siteConfig from '../../site-config.json';
+const conf = require('../config');
+const siteConfig = require('../../site-config.json');
 
 gulp.task('view', () => gulp.src(conf.view.src)
   .pipe(plumber())

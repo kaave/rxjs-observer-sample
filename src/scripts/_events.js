@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import notice from 'libraries-frontend-framelunch/lib/js/notice';
+import notice from 'libraries-frontend-framelunch/js/notice';
 
 const $window = $(window);
 

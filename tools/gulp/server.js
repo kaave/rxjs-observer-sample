@@ -1,7 +1,7 @@
-import gulp from 'gulp';
-import browser from 'browser-sync';
+const gulp = require('gulp');
+const browser = require('browser-sync');
 
-import conf from '../config';
+const conf = require('../config');
 
 gulp.task('server', () => browser.init(null, conf.browser));
 

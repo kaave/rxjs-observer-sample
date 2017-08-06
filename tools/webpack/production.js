@@ -1,10 +1,10 @@
-import webpack from 'webpack';
-import UglifyJs from 'uglifyjs-webpack-plugin';
-import base from './base';
+const webpack = require('webpack');
+const UglifyJs = require('uglifyjs-webpack-plugin');
+const base = require('./base');
 
 process.noDeprecation = true;
 
-export default Object.assign({}, base, {
+module.exports = Object.assign({}, base, {
   cache: false,
   devtool: '',
   plugins: [

@@ -1,7 +1,7 @@
-import gulp from 'gulp';
-import rimraf from 'rimraf';
+const gulp = require('gulp');
+const rimraf = require('rimraf');
 
-import conf from '../config';
+const conf = require('../config');
 
 gulp.task('clean', cb => rimraf(conf.dest.dev, {}, cb));
 gulp.task('b.clean', cb => rimraf(conf.dest.build, {}, cb));
