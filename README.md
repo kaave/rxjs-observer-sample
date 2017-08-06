@@ -52,7 +52,12 @@ yarn build:check
     * [babel-preset-env](https://github.com/babel/babel-preset-env)
     * [babel-plugin-transform-object-rest-spread](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread)
 
-※JSで扱うimgはimportを用いてinline化する
+JSから以下のファイルをすることが可能なため、ケースバイケースで使用すると良
+
+- 画像ファイル(`jpg`, `gif`, `png`, `svg`) svgはテキストとして、それ以外はinline化される
+- プレーンテキスト(`txt`, `log`)
+- JSON(`json`)
+- CSS(`css`)
 
 #### CSS
 
@@ -68,6 +73,8 @@ yarn build:check
 #### html
 
 * [EJS](http://www.embeddedjs.com/)
+
+ビルド時にオプション値 `/site-config.json` が読み込まれるので適宜利用する
 
 ### Code checker
 

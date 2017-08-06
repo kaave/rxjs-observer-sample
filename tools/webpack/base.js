@@ -54,7 +54,7 @@ module.exports = {
     modules: [
       'node_modules',
     ],
-    extensions: ['.jsx', '.js'],
+    extensions: ['json', '.jsx', '.js'],
   },
   module: {
     rules: [
@@ -103,7 +103,11 @@ module.exports = {
       {
         test: /\.svg$/,
         use: 'svg-inline-loader'
-      }
+      },
+      {
+        test: /\.(txt|log|md)$/,
+        use: 'raw-loader'
+      },
     ],
   },
 };

@@ -7,6 +7,7 @@ import notice from 'libraries-frontend-framelunch/js/notice';
 import state from 'libraries-frontend-framelunch/js/state';
 import subscribeEvents from './_events';
 import flLogoImageCode from '../assets/fl-logo.svg';
+import loremTxt from '../assets/loremipsum.txt';
 
 class Main {
   constructor() {
