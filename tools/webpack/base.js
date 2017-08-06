@@ -92,13 +92,17 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|png|gif|svg)$/,
+        test: /\.(jpg|png|gif)$/,
         use: {
           loader: 'url-loader',
           options: {
             name: '[name].[ext]'
           }
         }
+      },
+      {
+        test: /\.svg$/,
+        use: 'svg-inline-loader'
       }
     ],
   },

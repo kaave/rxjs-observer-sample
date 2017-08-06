@@ -6,6 +6,7 @@ import anime from 'animejs';
 import notice from 'libraries-frontend-framelunch/js/notice';
 import state from 'libraries-frontend-framelunch/js/state';
 import subscribeEvents from './_events';
+import flLogoImageCode from '../assets/fl-logo.svg';
 
 class Main {
   constructor() {
@@ -36,6 +37,23 @@ class Main {
       duration: 2000,
       loop: false,
     });
+
+    const svgSection = document.createElement('div');
+    svgSection.classList.add('svg-section');
+    svgSection.innerHTML = flLogoImageCode;
+    document.body.appendChild(svgSection);
+    svgSection.style.width = '300px';
+    svgSection.style.marginLeft = '300px';
+    svgSection.style.transition = 'all 500ms ease-in-out';
+    const flSvg = svgSection.firstChild;
+    flSvg.style.transition = 'all 500ms ease-in-out';
+    flSvg.setAttribute('stroke', '#000');
+    setInterval(() => {
+      flSvg.style.fill = `#${Math.floor(Math.random() * 255 * 255 * 255).toString(16).padStart(6, '0')}`;
+      svgSection.style.transform = new Date().getMilliseconds() >= 500 ?
+        `scale(${Math.random() * 3 + 1}, 0.03)` :
+        `scale(0.03, ${Math.random() * 10 + 1})`;
+    }, 500);
   }
 
   onWindowResize($window) {

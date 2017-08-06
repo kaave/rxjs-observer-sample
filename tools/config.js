@@ -65,7 +65,7 @@ module.exports = {
     server: {
       baseDir: ['.tmp'],
       routes: {
-        '/assets': 'src/assets'
+        '/': 'src/assets'
       },
     },
   },
