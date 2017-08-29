@@ -49,14 +49,14 @@ module.exports = {
 
   style: {
     src: ['src/styles/**/*.css', '!src/styles/**/_*'],
-    watch: ['src/styles/**/*.css', 'src/modules/**/*.css'],
+    watch: ['src/styles/**/*.css', 'src/components/**/*.css', 'src/modules/**/*.css'],
     urlOption: { filter: ['./**/*'], url: 'inline' },
     autoprefixerOption: { grid: true }
   },
 
   script: {
     src: ['src/scripts/**/*.{js,jsx}', '!src/scripts/**/_*'],
-    watch: ['src/scripts/**/*', 'src/components/**/*', 'src/modules/**/*.{js,jsx}', 'src/libs/**/*.js']
+    watch: ['src/scripts/**/*', 'src/components/**/*.{js,jsx}', 'src/modules/**/*.{js,jsx}', 'src/libs/**/*.js']
   },
 
   browser: {
