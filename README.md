@@ -104,6 +104,7 @@ JSから以下のファイルをすることが可能なため、ケースバイ
 |    |- /scripts/           # Javascriptのエントリーディレクトリ
 |    |- /styles/            # CSSのエントリーディレクトリ
 |    |- /views/             # EJSのエントリーディレクトリ
+|    |- site-config.json    # EJSビルド時に渡されるオプション値 metaタグなどに使うこと想定
 |- /tools/                  # ビルドツール関連
 |    |- /gulp/              # gulpタスクを記述したjs。タスクごとに1ファイルとする
 |    |- /webpack/           # webpackビルド設定
@@ -118,7 +119,6 @@ JSから以下のファイルをすることが可能なため、ケースバイ
 |- gulpfile.js              # gulp実行ファイル
 |- package.json             # The list of 3rd party libraries for nodeJs
 |- README.md                # README
-|- site-config.json         # EJSビルド時に渡されるオプション値 metaタグなどに使うこと想定
 |- yarn.lock                # yarn用利用npmsバージョン管理ファイル
 ```
 

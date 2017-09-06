@@ -6,7 +6,7 @@ const htmlmin = require('gulp-htmlmin');
 const browser = require('browser-sync');
 
 const conf = require('../config');
-const siteConfig = require('../../site-config.json');
+const siteConfig = require('../../src/site-config.json');
 
 gulp.task('view', () => gulp.src(conf.view.src)
   .pipe(plumber())
