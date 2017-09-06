@@ -28,7 +28,7 @@ gulp.task('style', () => (
       autoprefixer(conf.style.autoprefixerOption)
     ]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(`${conf.dest.dev}/css`))
+    .pipe(gulp.dest(conf.dest.dev))
     .pipe(browser.reload({ stream: true }))
 ));
 
@@ -41,7 +41,7 @@ gulp.task('b.style', () => (
       nested,
       cssFixes,
       autoprefixer(conf.style.autoprefixerOption),
-      cssnano,
+      cssnano(conf.style.cssnanoOption),
     ]))
-    .pipe(gulp.dest(`${conf.dest.build}/css`))
+    .pipe(gulp.dest(conf.dest.build))
 ));

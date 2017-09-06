@@ -19,6 +19,8 @@ yarn
 yarn start
 # create production files
 yarn build
+# create difference production files
+yarn build:diff <CHECKOUT_TARGET ex:commitid, tagname, branch...>
 # check JavaScript types
 yarn typecheck
 # check codes quality
@@ -52,12 +54,12 @@ yarn build:check
     * [babel-preset-env](https://github.com/babel/babel-preset-env)
     * [babel-plugin-transform-object-rest-spread](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread)
 
-JSから以下のファイルをすることが可能なため、ケースバイケースで使用すると良
+JSから以下のファイルをimportすることが可能なため、ケースバイケースで使用すると良
 
-- 画像ファイル(`jpg`, `gif`, `png`, `svg`) svgはテキストとして、それ以外はinline化される
-- プレーンテキスト(`txt`, `log`)
-- JSON(`json`)
-- CSS(`css`)
+* 画像ファイル(`jpg`, `gif`, `png`, `svg`) svgはテキストとして、それ以外はinline化される
+* プレーンテキスト(`txt`, `log`)
+* JSON(`json`)
+* CSS(`css`)
 
 #### CSS
 

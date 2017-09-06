@@ -13,7 +13,7 @@ module.exports = {
     src: 'build/**/*.{js,css,png,gif,jpg,jpeg,svg,eot,ttf,woff,ico}',
     dest: 'build',
     manifestFileName: 'manifest.json',
-    isEnable: true
+    isEnable: false   // ここをtrueにすると生成ファイルにハッシュが付きます。ただし差分ビルドが死にます。
   },
 
   revReplace: {
@@ -23,7 +23,7 @@ module.exports = {
 
   view: {
     src: ['src/views/**/*.ejs', '!src/views/**/_*'],
-    watch: ['src/views/**/*.ejs', 'src/modules/**/*.ejs'],
+    watch: ['src/views/**/*.ejs'],
     rename (path) {
       // TODO: ちょっと複雑感あるので、一旦コメントアウト
       // if (path.basename === 'index') {
@@ -48,15 +48,20 @@ module.exports = {
   },
 
   style: {
-    src: ['src/styles/**/*.css', '!src/styles/**/_*'],
-    watch: ['src/styles/**/*.css', 'src/components/**/*.css', 'src/modules/**/*.css'],
+    src: ['src/**/*.css', '!src/**/_*', '!src/components/**/*', '!src/assets/**/*'],
+    watch: ['src/**/*.css', 'src/components/**/*.css'],
     urlOption: { filter: ['./**/*'], url: 'inline' },
-    autoprefixerOption: { grid: true }
+    autoprefixerOption: { grid: true },
+    // for postcss-fixes  https://www.npmjs.com/package/postcss-fixes#recommended-usage
+    cssnanoOption: {
+      safe: true,
+      calc: false
+    }
   },
 
   script: {
-    src: ['src/scripts/**/*.{js,jsx}', '!src/scripts/**/_*'],
-    watch: ['src/scripts/**/*', 'src/components/**/*.{js,jsx}', 'src/modules/**/*.{js,jsx}', 'src/libs/**/*.js']
+    src: ['src/**/*.{js,jsx}', '!src/**/_*', '!src/components/**/*', '!src/assets/**/*'],
+    watch: ['src/**/*.{js,jsx}', 'src/components/**/*.{js,jsx}']
   },
 
   browser: {

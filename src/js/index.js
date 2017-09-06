@@ -80,4 +80,3 @@ notice.publish('init', [123]);
 state.listen('add:a', v => console.log('add:a', v));
 state.listen('add:c', v => console.log('add:c', v));
 state.change('a/b/c', [5678]);
-
