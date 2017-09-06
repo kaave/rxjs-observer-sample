@@ -4,9 +4,9 @@ module.exports = {
     build: 'build',
   },
 
+  // この項目に要素を追加すると[copy:*]という名称で勝手にtaskも増えます。
   copy: {
-    roots: ['src/*.*'],
-    assets: ['src/assets/**/*'],
+    assets: ['assets/**/*'],
   },
 
   rev: {
@@ -66,7 +66,7 @@ module.exports = {
     server: {
       baseDir: ['.tmp'],
       routes: {
-        '/': 'src/assets'
+        '/': 'assets'
       },
     },
   },

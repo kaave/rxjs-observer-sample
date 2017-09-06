@@ -1,12 +1,12 @@
 const gulp = require('gulp');
-const gulpif = require('gulp-if');
 const runSequence = require('run-sequence');
 
 const conf = require('../config');
 
 gulp.task('dev', cb => runSequence(
   'clean',
-  ['view', 'style', 'script'],
+  'style',
+  ['view', 'script'],
   'server',
   cb
 ));
@@ -20,16 +20,18 @@ gulp.task('default', ['dev'], () => {
 gulp.task('build', cb => conf.rev.isEnable ?
   runSequence(
     'b.clean',
-    ['b.view', 'b.style', 'b.script'],
-    ['copy.roots', 'copy.assets'],
+    'b.style',
+    ['b.view', 'b.script'],
+    Object.keys(conf.copy).map(key => `copy:${key}`),
     'rev',
     'rev.replace',
     cb
   ) :
   runSequence(
     'b.clean',
-    ['b.view', 'b.style', 'b.script'],
-    ['copy.roots', 'copy.assets'],
+    'b.style',
+    ['b.view', 'b.script'],
+    Object.keys(conf.copy).map(key => `copy:${key}`),
     cb
   )
 );

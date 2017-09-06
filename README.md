@@ -7,7 +7,7 @@
 * Node: >= `v6.9`
 * yarn: >= `0.24.5`
     * or npm >= `3.10.10`
-    
+
 ### Optionals
 
 ## How to use
@@ -94,14 +94,13 @@ JSから以下のファイルをすることが可能なため、ケースバイ
 ```text
 .
 |- /.github/                # GitHub用issue, PRテンプレ
+|- /assets/                 # 静的リソース build時にそのままrootに展開されます
 |- /build/                  # yarn buildコマンドで生成されるコンパイル済みファイル
 |- /flow-typed/             # flowtype用型ファイル(自動生成ディレクトリ)
 |- /node_modules/           # 3rd-party libraries and utilities for nodeJs
 |- /src
-|    |- /assets/            # フロントエンドに必要な静的リソース
+|    |- /assets/            # JSから直接importする静的リソース
 |    |- /components/        # WEBコンポーネント
-|    |- /libs/              # Javascriptのライブラリ
-|    |- /modules/           # ページの主要なパーツを構成するモジュール
 |    |- /scripts/           # Javascriptのエントリーディレクトリ
 |    |- /styles/            # CSSのエントリーディレクトリ
 |    |- /views/             # EJSのエントリーディレクトリ
