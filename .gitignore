@@ -190,3 +190,5 @@ tags
 /.tmp
 # build files (production)
 /build
+# build files (difference files)
+/build_diff
