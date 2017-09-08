@@ -52,8 +52,8 @@ class Main {
     setInterval(() => {
       flSvg.style.fill = `#${Math.floor(Math.random() * 255 * 255 * 255).toString(16).padStart(6, '0')}`;
       svgSection.style.transform = new Date().getMilliseconds() >= 500 ?
-        `scale(${Math.random() * 3 + 1}, 0.03)` :
-        `scale(0.03, ${Math.random() * 10 + 1})`;
+        `scale(${Math.random() * 3 + 1}, 0.03)` : // eslint-disable-line
+        `scale(0.03, ${Math.random() * 10 + 1})`; // eslint-disable-line
     }, 500);
   }
 
