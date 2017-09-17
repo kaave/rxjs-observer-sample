@@ -52,7 +52,6 @@
     "flow-bin": "^0.52.0",
     "flow-typed": "^2.1.5",
     "fs-extra": "^4.0.1",
-    "globby": "^6.1.0",
     "gulp": "^3.9.1",
     "gulp-ejs": "^3.0.1",
     "gulp-htmlmin": "^3.0.0",

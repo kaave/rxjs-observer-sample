@@ -1,10 +1,12 @@
+const { browserslist } = require('../package.json');
+
 module.exports = {
   dest: {
     dev: '.tmp',
     build: 'build',
   },
 
-  // この項目に要素を追加すると[copy:*]という名称で勝手にtaskも増えます。
+  // この項目に要素を追加すると[copy:[KEY_NAME]]という名称で勝手にtaskも増えます。
   copy: {
     assets: ['assets/**/*'],
   },
@@ -61,7 +63,36 @@ module.exports = {
 
   script: {
     src: ['src/**/*.{js,jsx}', '!src/**/_*', '!src/components/**/*', '!src/assets/**/*'],
-    watch: ['src/**/*.{js,jsx}', 'src/components/**/*.{js,jsx}']
+    watch: ['src/**/*.{js,jsx}', 'src/components/**/*.{js,jsx}'],
+    entry: {
+      vendor: [
+        // useBuiltIns: trueが効かなくなるためvendorからは外す
+        // 'babel-polyfill',
+        'animejs',
+        'jquery',
+      ],
+      index: './src/js/index.js',
+    },
+    babelOptions: {
+      presets: [
+        ['env', {
+          // package.jsonで指定したbrowserslistを利用する
+          targets: { browsers: browserslist },
+          // babel-polyfillのうちbrowserslistを踏まえて必要なものだけ読み込む
+          useBuiltIns: true,
+          // productionの場合tree shakingを有効化
+          modules: process.env.NODE_ENV === 'production' ? false : 'commonjs',
+          // developmentの際にデバッグ情報を出力する
+          debug: process.env.NODE_ENV === 'development'
+        }],
+        'flow'
+      ],
+      plugins: [
+        'transform-object-rest-spread'
+      ],
+      cacheDirectory: true,
+      babelrc: false
+    }
   },
 
   browser: {
@@ -76,3 +107,4 @@ module.exports = {
     },
   },
 };
+
