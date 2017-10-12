@@ -1,6 +1,6 @@
 {
   "name": "scaffold-frontend",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "index.js",
   "repository": "git@github.com:framelunch/scaffold-frontend.git",
   "author": "Yuichi Ikeda <ikeda@framelunch.jp>",
@@ -44,6 +44,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-flow": "^6.23.0",
     "browser-sync": "^2.18.13",
+    "cache-loader": "^1.1.0",
     "child_process": "^1.0.2",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
