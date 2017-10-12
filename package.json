@@ -34,7 +34,7 @@
     "babel-polyfill": "^6.26.0",
     "jquery": "^3.2.1",
     "jquery-touch-events": "^1.0.7",
-    "libraries-frontend-framelunch": "framelunch/libraries-frontend-framelunch#v0.1.2"
+    "libraries-frontend-framelunch": "framelunch/libraries-frontend-framelunch#0.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
