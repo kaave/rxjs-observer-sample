@@ -1,13 +1,11 @@
 import 'babel-polyfill'; // アプリ内で1度だけ読み込む エントリーポイントのてっぺん推奨
 import $ from 'jquery';
 import touchEvents from 'jquery-touch-events';
-import anime from 'animejs';
 
 import notice from 'libraries-frontend-framelunch/js/notice';
 import state from 'libraries-frontend-framelunch/js/state';
 import subscribeEvents from './_events';
 import flLogoImageCode from '../assets/fl-logo.svg';
-import loremTxt from '../assets/loremipsum.txt';
 
 class Main {
   constructor() {
@@ -22,23 +20,6 @@ class Main {
   }
 
   onDOMContentLoaded() {
-    anime({
-      targets: '#test-img',
-      translateX: [
-        { value: 100, duration: 1200 },
-        { value: 0, duration: 800 },
-      ],
-      rotate: '1turn',
-      backgroundColor: [
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-        { value: `hsl(${Math.floor(Math.random() * 360)}, 90%, 70%)`, dulation: 500 },
-      ],
-      duration: 2000,
-      loop: false,
-    });
-
     const svgSection = document.createElement('div');
     svgSection.classList.add('svg-section');
     svgSection.innerHTML = flLogoImageCode;
