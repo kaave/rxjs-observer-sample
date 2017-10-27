@@ -11,9 +11,9 @@
   "browserslist": [
     "ie 11",
     "ios >= 10",
-    "android >= 4.4.4",
     "> 1% in JP",
-    "not ie 10"
+    "not ie <= 10",
+    "not chrome 49"
   ],
   "scripts": {
     "postinstall": "flow-typed install",
