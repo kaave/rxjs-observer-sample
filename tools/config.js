@@ -53,9 +53,12 @@ module.exports = {
     src: ['src/**/*.css', '!src/**/_*', '!src/components/**/*', '!src/assets/**/*'],
     watch: ['src/**/*.css', 'src/components/**/*.css'],
     urlOption: { filter: ['./**/*'], url: 'inline' },
-    autoprefixerOption: { grid: true },
-    // for postcss-fixes  https://www.npmjs.com/package/postcss-fixes#recommended-usage
+    autoprefixerOption: {
+      // Trident browsers (e.g. ie, edge) are lagacy support on grid layout.
+      grid: false
+    },
     cssnanoOption: {
+      // for postcss-fixes  https://www.npmjs.com/package/postcss-fixes#recommended-usage
       safe: true,
       calc: false
     }
@@ -68,7 +71,6 @@ module.exports = {
       vendor: [
         // useBuiltIns: trueが効かなくなるためvendorからは外す
         // 'babel-polyfill',
-        'animejs',
         'jquery',
       ],
       index: './src/js/index.js',
