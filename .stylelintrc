@@ -2,19 +2,8 @@
   "extends": ["stylelint-config-framelunch"],
   "ignoreFiles": [
     ".tmp/**/*",
-    "build/**/*",
-    "src/**/_**.css"
+    "build/**/*"
   ],
   "rules": {
-    "at-rule-no-unknown": [true, "ignoreAtRules": ["mixin", "define-mixin"]],
-    "at-rule-empty-line-before": [
-      "always",
-      "except": [
-        "blockless-after-same-name-blockless",
-        "first-nested",
-        "inside-block"
-      ],
-      ignore: ["after-comment"]
-    ]
   }
 }
