@@ -1,6 +1,6 @@
 {
   "name": "scaffold-frontend",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "index.js",
   "repository": "git@github.com:framelunch/scaffold-frontend.git",
   "author": "Yuichi Ikeda <ikeda@framelunch.jp>",
@@ -33,7 +33,7 @@
     "babel-polyfill": "^6.26.0",
     "jquery": "^3.2.1",
     "jquery-touch-events": "^1.0.7",
-    "libraries-frontend-framelunch": "framelunch/libraries-frontend-framelunch#0.3.0"
+    "libraries-frontend-framelunch": "framelunch/libraries-frontend-framelunch#0.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",

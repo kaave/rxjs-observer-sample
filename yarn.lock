@@ -4313,9 +4313,9 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-libraries-frontend-framelunch@framelunch/libraries-frontend-framelunch#0.3.0:
-  version "0.2.0"
-  resolved "https://codeload.github.com/framelunch/libraries-frontend-framelunch/tar.gz/a270ed1c17cd0b106315c2226c10ea4ef09175ea"
+libraries-frontend-framelunch@framelunch/libraries-frontend-framelunch#0.3.2:
+  version "0.3.2"
+  resolved "https://codeload.github.com/framelunch/libraries-frontend-framelunch/tar.gz/57a3f5d305789900907743e9acbb789bfc981117"
   dependencies:
     sanitize.css "^5.0.0"
 
