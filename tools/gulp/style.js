@@ -43,6 +43,8 @@ gulp.task('b.style', () => (
       customProperties,
       customMedia,
       nested,
+      mixins,
+      simpleVars,
       cssFixes,
       autoprefixer(conf.style.autoprefixerOption),
       cssnano(conf.style.cssnanoOption),
