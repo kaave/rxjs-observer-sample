@@ -1,10 +1,11 @@
 import 'babel-polyfill'; // アプリ内で1度だけ読み込む エントリーポイントのてっぺん推奨
 import $ from 'jquery';
 import touchEvents from 'jquery-touch-events';
-
 import notice from 'libraries-frontend-framelunch/js/notice';
 import state from 'libraries-frontend-framelunch/js/state';
-import subscribeEvents from './_events';
+
+import './modules/DeviceChecker';
+import subscribeEvents from './modules/_events';
 import flLogoImageCode from '../assets/fl-logo.svg';
 
 class Main {
