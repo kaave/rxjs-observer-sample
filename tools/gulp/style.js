@@ -46,6 +46,7 @@ gulp.task('b.style', () => (
       mixins,
       simpleVars,
       cssFixes,
+      url(conf.style.urlOption),
       autoprefixer(conf.style.autoprefixerOption),
       cssnano(conf.style.cssnanoOption),
     ]))
