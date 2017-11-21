@@ -1,4 +1,4 @@
-const { browserslist } = require('../package.json');
+const { browserslist: browsers } = require('../package.json');
 
 module.exports = {
   dest: {
@@ -15,7 +15,7 @@ module.exports = {
     src: 'build/**/*.{js,css,png,gif,jpg,jpeg,svg,eot,ttf,woff,ico}',
     dest: 'build',
     manifestFileName: 'manifest.json',
-    isEnable: false   // ここをtrueにすると生成ファイルにハッシュが付きます。ただし差分ビルドが死にます。
+    isEnable: false, // ここをtrueにすると生成ファイルにハッシュが付きます。ただし差分ビルドが死にます。
   },
 
   revReplace: {
@@ -26,7 +26,7 @@ module.exports = {
   view: {
     src: ['src/views/**/*.ejs', '!src/views/**/_*'],
     watch: ['src/views/**/*.ejs'],
-    rename (path) {
+    rename(path) {
       // TODO: ちょっと複雑感あるので、一旦コメントアウト
       // if (path.basename === 'index') {
       //   return;
@@ -57,8 +57,8 @@ module.exports = {
     cssnanoOption: {
       // for postcss-fixes  https://www.npmjs.com/package/postcss-fixes#recommended-usage
       safe: true,
-      calc: false
-    }
+      calc: false,
+    },
   },
 
   script: {
@@ -68,6 +68,8 @@ module.exports = {
       vendor: [
         // useBuiltIns: trueが効かなくなるためvendorからは外す
         // 'babel-polyfill',
+        // babel-plugin-date-fnsが効かなくなるためvendorからは外す
+        // 'date-fns',
         'jquery',
       ],
       index: './src/js/index.js',
@@ -76,22 +78,23 @@ module.exports = {
       presets: [
         ['env', {
           // package.jsonで指定したbrowserslistを利用する
-          targets: { browsers: browserslist },
+          targets: { browsers },
           // babel-polyfillのうちbrowserslistを踏まえて必要なものだけ読み込む
           useBuiltIns: true,
           // productionの場合tree shakingを有効化
           modules: process.env.NODE_ENV === 'production' ? false : 'commonjs',
           // developmentの際にデバッグ情報を出力する
-          debug: process.env.NODE_ENV === 'development'
+          debug: process.env.NODE_ENV === 'development',
         }],
-        'flow'
+        'flow',
       ],
       plugins: [
-        'transform-object-rest-spread'
+        'transform-object-rest-spread',
+        'date-fns',
       ],
       cacheDirectory: true,
-      babelrc: false
-    }
+      babelrc: false,
+    },
   },
 
   browser: {
@@ -101,7 +104,7 @@ module.exports = {
     server: {
       baseDir: ['.tmp'],
       routes: {
-        '/': 'assets'
+        '/': 'assets',
       },
     },
   },

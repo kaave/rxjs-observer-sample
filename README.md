@@ -3,10 +3,10 @@
 ## Requierment
 
 * macOS: >= `10.12`
-    * or Ubuntu `16.04`
+  * or Ubuntu `16.04`
 * Node: >= `v6.9`
 * yarn: >= `0.24.5`
-    * or npm >= `3.10.10`
+  * or npm >= `3.10.10`
 
 ### Optionals
 
@@ -50,9 +50,10 @@ yarn build:check
 
 * [Webpack](https://webpack.github.io/)
 * [babel](https://babeljs.io/)
-    * [babel-preset-flow](https://github.com/babel/babel/tree/master/packages/babel-preset-flow)
-    * [babel-preset-env](https://github.com/babel/babel-preset-env)
-    * [babel-plugin-transform-object-rest-spread](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread)
+  * [babel-preset-flow](https://github.com/babel/babel/tree/master/packages/babel-preset-flow)
+  * [babel-preset-env](https://github.com/babel/babel-preset-env)
+  * [babel-plugin-transform-object-rest-spread](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread)
+  * [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
 
 JSから以下のファイルをimportすることが可能なため、ケースバイケースで使用すると良
 
@@ -64,13 +65,19 @@ JSから以下のファイルをimportすることが可能なため、ケース
 #### CSS
 
 * [PostCSS](http://postcss.org/)
-    * [autoprefixer](https://github.com/postcss/autoprefixer)
-    * [css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
-    * [postcss-fixes](https://github.com/mattdimu/postcss-fixes)
+  * [autoprefixer](https://github.com/postcss/autoprefixer)
+  * [css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
+  * [postcss-fixes](https://github.com/mattdimu/postcss-fixes)
+  * [postcss-custom-media](https://github.com/postcss/postcss-custom-media)
+  * [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties)
+  * [postcss-import](https://github.com/postcss/postcss-import)
+  * [postcss-loader](https://github.com/postcss/postcss-loader)
+  * [postcss-nested](https://github.com/postcss/postcss-nested)
+  * [postcss-url](https://github.com/postcss/postcss-url)
+  * [postcss-mixins(Grid layout対策以外での利用非推奨)](https://github.com/postcss/postcss-mixins)
+  * [postcss-simple-vars(利用非推奨)](https://github.com/postcss/postcss-simple-vars)
 
-* [ECSS](http://ecss.io/)
-
-※CSSでのurl指定はinline化される。
+`background-image` などのCSSでのurl指定を相対パスで行った場合、inline化される。
 
 #### html
 
@@ -84,12 +91,12 @@ JSから以下のファイルをimportすることが可能なため、ケース
 
 * [flow](https://flow.org/)
 * [ESLint](http://eslint.org/)
-    * [eslint-config-framelunch](https://github.com/framelunch/eslint-config-framelunch)
+  * [eslint-config-framelunch](https://github.com/framelunch/eslint-config-framelunch)
 
 #### CSS
 
 * [stylelint](https://stylelint.io/)
-    * [stylelint-config-framelunch](https://github.com/framelunch/stylelint-config-framelunch)
+  * [stylelint-config-framelunch](https://github.com/framelunch/stylelint-config-framelunch)
 
 ## Directory Layout
 
@@ -125,5 +132,33 @@ JSから以下のファイルをimportすることが可能なため、ケース
 ```
 
 ## Settings
-- ProjectのSettingでsrcディレクトリをrootに設定する
-- assetは必ず絶対パスで記述する
+
+* `package.json` のbrowserslistに対応するブラウザを書く
+* ProjectのSettingでsrcディレクトリをrootに設定する
+* viewファイルから読み込むassetは必ず絶対パスで記述する
+
+## Coding guides
+
+原則として、 __モダンかつ読みやすいコーディング__ を心がける
+
+以下については本当に基礎的な話だけ
+
+### JavaScript
+
+* ES2015+
+* 日時の計算や文字列化は `date-fns` を使う
+* 複雑になってきたらなるべく型をつける
+
+### CSS
+
+* PostCSS
+* 基本的にBEM
+  * [細かすぎるけど伝わってほしい私的BEMプラクティス30（ぐらい）](https://necomesi.jp/blog/tsmd/posts/152) が最近だと参考になった
+* 他にもコーディングルールとして[ECSS](http://ecss.io/)をつかうと良いかも…(難しいけど)
+
+### HTML
+
+* html5
+* なるべくアクセシビリティを意識して無理筋なタグの使い方をしない
+  * [インクルーシブHTML+CSS & JavaScript](https://www.amazon.co.jp/dp/4862463878/)を参考に。
+  * [コーディングWebアクセシビリティ](https://www.amazon.co.jp/dp/4862462669/)もより専門的だが非常に参考になる

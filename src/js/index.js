@@ -1,6 +1,7 @@
 import 'babel-polyfill'; // アプリ内で1度だけ読み込む エントリーポイントのてっぺん推奨
 import $ from 'jquery';
 import touchEvents from 'jquery-touch-events';
+import { format } from 'date-fns';
 import notice from 'libraries-frontend-framelunch/js/notice';
 import state from 'libraries-frontend-framelunch/js/state';
 
@@ -21,6 +22,7 @@ class Main {
   }
 
   onDOMContentLoaded() {
+    console.log(`DOMContentLoaded: ${format(new Date())}`);
   }
 
   onWindowResize($window) {
