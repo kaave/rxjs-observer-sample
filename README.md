@@ -137,6 +137,15 @@ JSから以下のファイルをimportすることが可能なため、ケース
 * ProjectのSettingでsrcディレクトリをrootに設定する
 * viewファイルから読み込むassetは必ず絶対パスで記述する
 
+### Spreadsheet setting
+
+Google スプレッドシートからJSONを作成するとっかかりを仕込んであるので、必要な場合は利用する。
+
+1. [Google Developer console](https://console.developers.google.com/)よりサービスアカウントキーを取得する。[参考](http://www.yoheim.net/blog.php?q=20160411)
+    * 取得するアカウントについては個人のものより共用のものが望ましい。
+1. `tools/serviceAccountKey.json` に保存する。__Git管理から除外しているので注意すること__
+1. `tools/config.js` で列の設定を行う。
+
 ## Coding guides
 
 原則として、 __モダンかつ読みやすいコーディング__ を心がける

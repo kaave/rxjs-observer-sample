@@ -194,3 +194,5 @@ tags
 /build
 # build files (difference files)
 /build_diff
+# spreadsheet key
+/tools/serviceAccountKey.json
