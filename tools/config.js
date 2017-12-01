@@ -97,6 +97,32 @@ module.exports = {
     },
   },
 
+  spreadsheet: {
+    // Spreadsheet ID URLから引っ張る
+    id: '1SOa3TeSRJdpcuoTkoRWuhRZDEaFEzt5CJQFThPgv0Ec',
+    output: './src/spreadsheet.json',
+    sheets: [
+      // 以下サンプル なんだか知らないけど列名は小文字になる模様
+      {
+        key: 'users',
+        sheetTitle: 'ユーザ一覧',
+        rows: [
+          ['id', 'id'],
+          ['name', '名前'],
+          ['age', '年齢'],
+        ]
+      },
+      {
+        key: 'groups',
+        sheetTitle: 'グループ',
+        rows: [
+          ['key', 'キー'],
+          ['name', '名前'],
+        ]
+      },
+    ],
+  },
+
   browser: {
     notify: false,
     port: 9012,

@@ -8,11 +8,12 @@ const fs = require('fs-extra');
 const path = require('path');
 
 const conf = require('./config');
+const credential = require('./serviceAccountKey.json');
 
 const result = {};
 const sheetHandler = new GoogleSpreadsheet(conf.spreadsheet.id);
 
-sheetHandler.useServiceAccountAuth(conf.spreadsheet.credential, useServiceAccountAuthCallback);
+sheetHandler.useServiceAccountAuth(credential, useServiceAccountAuthCallback);
 
 function useServiceAccountAuthCallback (authError) {
   console.log('---Auth start---');
@@ -33,30 +34,33 @@ function getSheetInfo (getSheetInfoError, { worksheets }) {
 }
 
 function parseWorksheet ({ title, getRows }) {
-  if (title === conf.spreadsheet.titles.sales.title) {
-    getRows(parseSalesSheet);
+  const info = conf.spreadsheet.sheets.find(({ sheetTitle }) => title === sheetTitle);
+  if (info) {
+    getRows((getRowsError, rows) => parseSheet(getRowsError, rows, info));
   }
 }
 
-function parseSalesSheet (getRowsError, rows) {
+function parseSheet (getRowsError, rows, worksheetInfo) {
   if (getRowsError) {
     throw getRowsError;
   }
 
-  console.log('---Sales parse start---');
-  result.sales = rows.map(row => {
-    return conf.spreadsheet.titles.sales.cells
-      .filter(([key]) => typeof row[key] !== 'undefined')
-      .reduce((parseRow, [key, type, systemKey]) => {
-        parseRow[systemKey] = row[key].trim();
-        return parseRow;
-      }, {});
-  });
+  result[worksheetInfo.key] = rows.map(row => worksheetInfo.rows
+    .filter(([key]) => typeof row[key] !== 'undefined')
+    .reduce((parseRow, [key, systemKey]) => {
+      parseRow[systemKey] = row[key].trim();
+      return parseRow;
+    }, {})
+  );
 
-  console.log('---Sales parse end---');
-  outputResult()
+  console.log('parsed:', worksheetInfo.key);
+
+  outputResult();
 }
 
 function outputResult () {
-  fs.writeFileSync(path.join(__dirname, '..', conf.spreadsheet.path), JSON.stringify(result));
+  if (Object.keys(conf.spreadsheet.sheets).length === Object.keys(result).length) {
+    fs.writeFileSync(path.join(__dirname, '..', conf.spreadsheet.output), JSON.stringify(result));
+    console.log('Write finish!');
+  }
 }

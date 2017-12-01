@@ -196,3 +196,5 @@ tags
 /build_diff
 # spreadsheet key
 /tools/serviceAccountKey.json
+# spreadsheet parsed data
+/src/spreadsheet.json

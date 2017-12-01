@@ -3,10 +3,10 @@
 ## Requierment
 
 * macOS: >= `10.12`
-  * or Ubuntu `16.04`
-* Node: >= `v6.9`
+    * or Ubuntu `16.04`
+* Node: >= `v8.9`
 * yarn: >= `0.24.5`
-  * or npm >= `3.10.10`
+    * or npm >= `3.10.10`
 
 ### Optionals
 
@@ -50,10 +50,10 @@ yarn build:check
 
 * [Webpack](https://webpack.github.io/)
 * [babel](https://babeljs.io/)
-  * [babel-preset-flow](https://github.com/babel/babel/tree/master/packages/babel-preset-flow)
-  * [babel-preset-env](https://github.com/babel/babel-preset-env)
-  * [babel-plugin-transform-object-rest-spread](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread)
-  * [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
+    * [babel-preset-flow](https://github.com/babel/babel/tree/master/packages/babel-preset-flow)
+    * [babel-preset-env](https://github.com/babel/babel-preset-env)
+    * [babel-plugin-transform-object-rest-spread](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread)
+    * [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns)
 
 JSから以下のファイルをimportすることが可能なため、ケースバイケースで使用すると良
 
@@ -65,17 +65,17 @@ JSから以下のファイルをimportすることが可能なため、ケース
 #### CSS
 
 * [PostCSS](http://postcss.org/)
-  * [autoprefixer](https://github.com/postcss/autoprefixer)
-  * [css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
-  * [postcss-fixes](https://github.com/mattdimu/postcss-fixes)
-  * [postcss-custom-media](https://github.com/postcss/postcss-custom-media)
-  * [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties)
-  * [postcss-import](https://github.com/postcss/postcss-import)
-  * [postcss-loader](https://github.com/postcss/postcss-loader)
-  * [postcss-nested](https://github.com/postcss/postcss-nested)
-  * [postcss-url](https://github.com/postcss/postcss-url)
-  * [postcss-mixins(Grid layout対策以外での利用非推奨)](https://github.com/postcss/postcss-mixins)
-  * [postcss-simple-vars(利用非推奨)](https://github.com/postcss/postcss-simple-vars)
+    * [autoprefixer](https://github.com/postcss/autoprefixer)
+    * [css-mqpacker](https://github.com/hail2u/node-css-mqpacker)
+    * [postcss-fixes](https://github.com/mattdimu/postcss-fixes)
+    * [postcss-custom-media](https://github.com/postcss/postcss-custom-media)
+    * [postcss-custom-properties](https://github.com/postcss/postcss-custom-properties)
+    * [postcss-import](https://github.com/postcss/postcss-import)
+    * [postcss-loader](https://github.com/postcss/postcss-loader)
+    * [postcss-nested](https://github.com/postcss/postcss-nested)
+    * [postcss-url](https://github.com/postcss/postcss-url)
+    * [postcss-mixins(Grid layout対策以外での利用非推奨)](https://github.com/postcss/postcss-mixins)
+    * [postcss-simple-vars(利用非推奨)](https://github.com/postcss/postcss-simple-vars)
 
 `background-image` などのCSSでのurl指定を相対パスで行った場合、inline化される。
 
@@ -91,12 +91,12 @@ JSから以下のファイルをimportすることが可能なため、ケース
 
 * [flow](https://flow.org/)
 * [ESLint](http://eslint.org/)
-  * [eslint-config-framelunch](https://github.com/framelunch/eslint-config-framelunch)
+    * [eslint-config-framelunch](https://github.com/framelunch/eslint-config-framelunch)
 
 #### CSS
 
 * [stylelint](https://stylelint.io/)
-  * [stylelint-config-framelunch](https://github.com/framelunch/stylelint-config-framelunch)
+    * [stylelint-config-framelunch](https://github.com/framelunch/stylelint-config-framelunch)
 
 ## Directory Layout
 
@@ -140,11 +140,13 @@ JSから以下のファイルをimportすることが可能なため、ケース
 ### Spreadsheet setting
 
 Google スプレッドシートからJSONを作成するとっかかりを仕込んであるので、必要な場合は利用する。
+何も考えずにJSON化するだけなので、文字列を数値に変更するなどの加工が必要な場合は別途スクリプトを作ること。
 
+1. スプレッドシートをあらかじめ作成しておき、共有の設定を行っておく
 1. [Google Developer console](https://console.developers.google.com/)よりサービスアカウントキーを取得する。[参考](http://www.yoheim.net/blog.php?q=20160411)
     * 取得するアカウントについては個人のものより共用のものが望ましい。
 1. `tools/serviceAccountKey.json` に保存する。__Git管理から除外しているので注意すること__
-1. `tools/config.js` で列の設定を行う。
+1. `tools/config.js` で対象のシートの指定、列の設定を行う。
 
 ## Coding guides
 
@@ -162,12 +164,12 @@ Google スプレッドシートからJSONを作成するとっかかりを仕込
 
 * PostCSS
 * 基本的にBEM
-  * [細かすぎるけど伝わってほしい私的BEMプラクティス30（ぐらい）](https://necomesi.jp/blog/tsmd/posts/152) が最近だと参考になった
+    * [細かすぎるけど伝わってほしい私的BEMプラクティス30（ぐらい）](https://necomesi.jp/blog/tsmd/posts/152) が最近だと参考になった
 * 他にもコーディングルールとして[ECSS](http://ecss.io/)をつかうと良いかも…(難しいけど)
 
 ### HTML
 
 * html5
-* なるべくアクセシビリティを意識して無理筋なタグの使い方をしない
-  * [インクルーシブHTML+CSS & JavaScript](https://www.amazon.co.jp/dp/4862463878/)を参考に。
-  * [コーディングWebアクセシビリティ](https://www.amazon.co.jp/dp/4862462669/)もより専門的だが非常に参考になる
+* 無理筋なタグの使い方をしない
+    * [インクルーシブHTML+CSS & JavaScript](https://www.amazon.co.jp/dp/4862463878/)を参考に。
+    * [コーディングWebアクセシビリティ](https://www.amazon.co.jp/dp/4862462669/)もより専門的だが非常に参考になる

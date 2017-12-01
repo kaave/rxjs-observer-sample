@@ -23,6 +23,7 @@
     "build:check": "run-s build server",
     "build:diff": "node tools/getBuildDiff",
     "server": "http-server ./build -p 23000 -o --cors",
+    "spreadsheet": "node tools/spreadsheetToJson",
     "typecheck": "flow",
     "lint": "run-p lint:*",
     "lint:style": "stylelint 'src/**/*.css'",
