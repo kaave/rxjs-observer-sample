@@ -22,7 +22,7 @@ gulp.task('build', cb => conf.rev.isEnable ?
     'b.clean',
     'b.style',
     ['b.view', 'b.script'],
-    Object.keys(conf.copy).map(key => `copy:${key}`),
+    [...Object.keys(conf.copy).map(key => `copy:${key}`), 'image'],
     'rev',
     'rev.replace',
     cb
@@ -31,7 +31,7 @@ gulp.task('build', cb => conf.rev.isEnable ?
     'b.clean',
     'b.style',
     ['b.view', 'b.script'],
-    Object.keys(conf.copy).map(key => `copy:${key}`),
+    [...Object.keys(conf.copy).map(key => `copy:${key}`), 'image'],
     cb
   )
 );
