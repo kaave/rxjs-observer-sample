@@ -6,6 +6,7 @@ const customProperties = require('postcss-custom-properties');
 const nested = require('postcss-nested');
 const importCss = require('postcss-import');
 const customMedia = require('postcss-custom-media');
+const hexAlpha = require('postcss-color-hex-alpha');
 const cssFixes = require('postcss-fixes');
 const url = require('postcss-url');
 const simpleVars = require('postcss-simple-vars');
@@ -26,6 +27,7 @@ gulp.task('style', () => (
       customMedia,
       nested,
       mixins,
+      hexAlpha,
       simpleVars,
       cssFixes,
       url(conf.style.urlOption),
@@ -44,6 +46,7 @@ gulp.task('b.style', () => (
       customMedia,
       nested,
       mixins,
+      hexAlpha,
       simpleVars,
       cssFixes,
       url(conf.style.urlOption),
