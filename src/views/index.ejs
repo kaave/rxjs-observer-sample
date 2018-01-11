@@ -7,16 +7,14 @@ const conf = {
 };
 %>
 
-<% include _head.ejs %>
-<% include ../components/header/header.ejs %>
+<%- include('_head.ejs', { conf }) %>
+<%- include('../components/header/header.ejs', { conf }) %>
 
 <main id="main" class="main" role="main">
-    <div class="panel-1">1</div>
-    <div class="panel-2">2</div>
-    <div class="panel-3">3</div>
-    <div class="panel-4">4</div>
-    <div class="panel-5">5</div>
+<% [...Array(5).keys()].forEach(index => { %>
+    <div class="panel-<%= index + 1 %>"><%= index + 1 %></div>
+<% }) %>
 </main>
 
-<% include ../components/footer/footer.ejs %>
-<% include _foot.ejs %>
+<%- include('../components/footer/footer.ejs', { conf }) %>
+<%- include('_foot.ejs', { conf }) %>
