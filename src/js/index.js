@@ -1,11 +1,11 @@
-import 'babel-polyfill'; // アプリ内で1度だけ読み込む エントリーポイントのてっぺん推奨
+/* eslint import/first: off */
+import './common/initializer';
 import $ from 'jquery';
 import touchEvents from 'jquery-touch-events';
 import { format } from 'date-fns';
 import notice from 'libraries-frontend-framelunch/js/notice';
 import state from 'libraries-frontend-framelunch/js/state';
 
-import './modules/DeviceChecker';
 import subscribeEvents from './modules/_events';
 import flLogoImageCode from '../assets/fl-logo.svg';
 

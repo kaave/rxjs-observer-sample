@@ -8,6 +8,8 @@
       "argsIgnorePattern": "^_"
     }],
     // thisを参照しないクラスメソッドはstaticでなければいけない 無効化 オブジェクト指向ってそういうもんではないと思う
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    // exportが1件だけならdefaultにする 無効化 気にしない
+    "import/prefer-default-export": "off"
   }
 }
