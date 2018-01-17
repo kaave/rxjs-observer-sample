@@ -7,6 +7,12 @@
     <title><%= conf.title %></title>
     <meta name="description" content="<%= conf.description %>">
 
+    <meta itemprop="name" content="<%= conf.title %>" />
+    <meta itemprop="description" content="<%= conf.description %>" />
+<% if (typeof conf.metaImage === 'string') { %>
+    <meta itemprop="image" content="<%- conf.metaImage %>" />
+<% } %>
+
     <meta property="og:title" content="<%= conf.title %>" />
     <meta property="og:description" content="<%= conf.description %>" />
 <% if (typeof og === 'object') { %>
