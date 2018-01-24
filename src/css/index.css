@@ -1,4 +1,4 @@
-@import "_global.css";
+@import "./common/_global.css";
 @import "../components/header/header.css";
 @import "../components/footer/footer.css";
 

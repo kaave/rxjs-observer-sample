@@ -8,7 +8,7 @@ const conf = {
 };
 %>
 
-<%- include('_head.ejs', { conf }) %>
+<%- include('./common/_head.ejs', { conf }) %>
 <%- include('../components/header/header.ejs', { conf }) %>
 
 <main id="main" class="main" role="main">
@@ -18,4 +18,4 @@ const conf = {
 </main>
 
 <%- include('../components/footer/footer.ejs', { conf }) %>
-<%- include('_foot.ejs', { conf }) %>
+<%- include('./common/_foot.ejs', { conf }) %>
