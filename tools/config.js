@@ -1,4 +1,9 @@
+const fs = require('fs');
+const path = require('path');
+
 const { browserslist: browsers } = require('../package.json');
+
+const manifestPath = path.join(__dirname, '..', 'assets', 'lib', 'vendor-manifest.json');
 
 module.exports = {
   dest: {
@@ -104,14 +109,27 @@ module.exports = {
     src: ['src/**/*.{js,jsx}', '!src/**/_*', '!src/components/**/*', '!src/assets/**/*'],
     watch: ['src/**/*.{js,jsx}', 'src/components/**/*.{js,jsx}'],
     entry: {
-      vendor: [
-        // useBuiltIns: trueが効かなくなるためvendorからは外す
-        // 'babel-polyfill',
-        // babel-plugin-date-fnsが効かなくなるためvendorからは外す
-        // 'date-fns',
-        'jquery',
-      ],
       index: './src/js/index.js',
+    },
+    dll: {
+      path: {
+        dll: path.join(__dirname, '..', 'assets', 'lib', 'js'),
+        manifest: manifestPath,
+      },
+      ignore: [
+        'babel-polyfill',
+        'date-fns',
+        'libraries-frontend-framelunch',
+      ],
+      library: '[name]_library',
+      manifest: (() => {
+        try {
+          fs.statSync(manifestPath);
+          return require(manifestPath);
+        } catch (_error) {
+          return {};
+        }
+      })(),
     },
     babelOptions: {
       presets: [
