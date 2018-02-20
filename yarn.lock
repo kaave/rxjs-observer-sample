@@ -2653,9 +2653,9 @@ eslint-config-airbnb@^15.1.0:
   dependencies:
     eslint-config-airbnb-base "^11.3.0"
 
-eslint-config-framelunch@framelunch/eslint-config-framelunch#v0.2.3:
-  version "0.2.3"
-  resolved "https://codeload.github.com/framelunch/eslint-config-framelunch/tar.gz/59a8aeb24e40725f43670d5e94d3e87af512b140"
+eslint-config-framelunch@framelunch/eslint-config-framelunch#v0.3.0:
+  version "0.3.0"
+  resolved "https://codeload.github.com/framelunch/eslint-config-framelunch/tar.gz/84f46313a4cabeef52a359cf90fdfd444e95c31d"
   dependencies:
     babel-eslint "^7.2.3"
     eslint-config-airbnb "^15.1.0"
