@@ -147,6 +147,35 @@ JSから以下のファイルをimportすることが可能なため、ケース
 * ProjectのSettingでsrcディレクトリをrootに設定する
 * viewファイルから読み込むassetは必ず絶対パスで記述する
 
+### Prettierのすすめ
+
+commit時に勝手にコードを整形してくれる。
+
+エディタを設定すると保存時にもいい感じに整形してくれる。
+
+#### VSCode設定
+
+1. [拡張](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)を入れる
+1. ローカル設定に以下を追加
+
+```json
+{
+  // prettier
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+}
+```
+
+グローバル設定をどうするかは人によりますが、falseにしといたほうがいいと思います。他のプロジェクトで適当に整形されたりするので。
+
+#### IntelliJ設定
+
+[この辺](https://qiita.com/kouchi67/items/6d3b5cf66f57c4ff6600)を参考に。
+
 ### Spreadsheet setting
 
 Google スプレッドシートからJSONを作成するとっかかりを仕込んであるので、必要な場合は利用する。
