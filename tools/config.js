@@ -110,6 +110,7 @@ module.exports = {
     watch: ['src/**/*.{js,jsx}', 'src/components/**/*.{js,jsx}'],
     entry: {
       index: './src/js/index.js',
+      easingImage: './src/js/easingImage.js',
     },
     dll: {
       path: {
@@ -119,6 +120,8 @@ module.exports = {
       ignore: [
         'babel-polyfill',
         'date-fns',
+        'rxjs',
+        'tmp-easing',
         'libraries-frontend-framelunch',
       ],
       library: '[name]_library',
