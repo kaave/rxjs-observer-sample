@@ -17,7 +17,17 @@
     "class-methods-use-this": "off",
     // exportが1件だけならdefaultにする 無効化 気にしない
     "import/prefer-default-export": "off",
-    "import/extensions": ["error", "ignorePackages", { ".ts": "never" }],
+    // package系、.js、.ts以外は拡張子を要求
+    "import/extensions": ["error", "never", {
+      ".jsx": "always",
+      ".tsx": "always",
+      ".json": "always",
+      ".ejs": "always",
+      ".svg": "always",
+      ".jpg": "always",
+      ".png": "always",
+      ".gif": "always"
+    }],
 
     /*
      * eslint with typescript problems
