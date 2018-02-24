@@ -111,6 +111,7 @@ module.exports = {
     entry: {
       index: './src/js/index.js',
       easingImage: './src/js/easingImage.js',
+      easingText: './src/js/easingText.js',
     },
     dll: {
       path: {
@@ -119,10 +120,10 @@ module.exports = {
       },
       ignore: [
         'babel-polyfill',
-        'date-fns',
         'rxjs',
         'tmp-easing',
         'libraries-frontend-framelunch',
+        'rxjs-easing-observer',
       ],
       library: '[name]_library',
       manifest: (() => {
