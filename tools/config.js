@@ -112,6 +112,8 @@ module.exports = {
       index: './src/js/index.js',
       easingImage: './src/js/easingImage.js',
       easingText: './src/js/easingText.js',
+      bouncingImage: './src/js/bouncingImage.js',
+      bouncingText: './src/js/bouncingText.js',
     },
     dll: {
       path: {
