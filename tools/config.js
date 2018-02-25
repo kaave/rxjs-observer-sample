@@ -116,6 +116,8 @@ module.exports = {
       bouncingText: './src/js/bouncingText.js',
       sequenceImage: './src/js/sequenceImage.js',
       sequenceText: './src/js/sequenceText.js',
+      flImage: './src/js/flImage.js',
+      flText: './src/js/flText.js',
     },
     dll: {
       path: {
