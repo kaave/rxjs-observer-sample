@@ -1,6 +1,6 @@
 assets
 .tmp
-build
+docs
 flow-typed
 node_modules
 tools
