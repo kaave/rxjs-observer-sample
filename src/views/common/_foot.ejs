@@ -11,7 +11,7 @@
 </script>
 <% } %>
 
-<script src="/lib/js/vendor.dll.js"></script>
+<script src="./lib/js/vendor.dll.js"></script>
 <%
 conf.script = conf.script || [];
 if (typeof conf.script === 'string') {
@@ -19,7 +19,7 @@ if (typeof conf.script === 'string') {
 }
 conf.script.forEach(script => {
 %>
-<script src="<%= script.match(/^https?:/) != null ? script : `/js/${script}` %>"></script>
+<script src="<%= script.match(/^https?:/) != null ? script : `./js/${script}` %>"></script>
 <% }) %>
 </body>
 </html>
